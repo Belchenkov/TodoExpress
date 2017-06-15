@@ -1,0 +1,10 @@
+<% include ../views/partials/header %>
+
+    <h1>Todo App</h1>
+
+    <ul>
+        <% todos.forEach((todo) => { %>
+            <li><%= todo.text%> - <%= todo.body %></li>
+        <%})%>
+    </ul>
+<% include ../views/partials/footer %>
