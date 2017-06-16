@@ -56,3 +56,7 @@ app.get('/', (req, res, next) => {
     });
 });
 
+app.post('/todo/add', (req, res, next) => {
+    console.log('Submitted');
+});
+

@@ -1,0 +1,24 @@
+body {
+    font-size: 16px;
+}
+
+.jumbotron {
+    background-color: indigo;
+    color: #fff;
+    font-family: 'Berkshire Swash', cursive;
+    font-weight: 700;
+    font-size: 34px;
+}
+
+form label {
+    font-size: 110%;
+    font-style: italic;
+}
+
+form input[name="todoBody"] {
+    margin-bottom: 20px;
+}
+
+#tasks {
+    margin-top: 33px;
+}
