@@ -26,7 +26,7 @@
                     <li class="list-group-item">
                         <span class="col-sm-6"><%= todo.text%> - <%= todo.body %></span>
                         <div class="text-right col-sm-6">
-                            <a href="#" class="btn-edit btn btn-warning col-sm-5">Edit</a>&nbsp;&nbsp;
+                            <a href="/todo/edit/<%= todo._id %>" class="btn-edit btn btn-warning col-sm-5">Edit</a>&nbsp;&nbsp;
                             <a href="#" data-id="<%= todo._id %>" class="btn-delete btn btn-danger col-sm-5">Delete</a>
                         </div>
                     </li>

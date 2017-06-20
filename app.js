@@ -45,6 +45,7 @@ MongoClient.connect(url, (err, database) => {
 });
 
 app.get('/', (req, res, next) => {
+    
     Todos.find({}).toArray((err, todos) => {
         if (err) {
             return console.log(err);
@@ -53,6 +54,21 @@ app.get('/', (req, res, next) => {
         console.log(todos);
         res.render('index', {
             'todos': todos
+        });
+    });
+});
+
+// Edit Todo
+
+app.get('/todo/edit/:id', (req, res, next) => {
+    const query = {_id: ObjectID(req.params.id)}
+    Todos.find(query).next((err, todo) => {
+        if (err) {
+            return console.log(err);
+        }
+
+        res.render('edit', {
+            'todo': todo
         });
     });
 });
@@ -70,6 +86,26 @@ app.post('/todo/add', (req, res, next) => {
       return console.log(err);
     }
     console.log('Todo Added...');
+    res.redirect('/');
+  });
+});
+
+
+app.post('/todo/edit/:id', (req, res, next) => {
+     const query = {_id: ObjectID(req.params.id)}
+ 
+ // Create todo
+  const todo = {
+    text: req.body.text,
+    body: req.body.body
+  }
+
+  // Upload todo
+  Todos.updateOne(query, {$set:todo}, (err, result) => {
+    if(err){
+      return console.log(err);
+    }
+    console.log('Todo Updated...');
     res.redirect('/');
   });
 });
