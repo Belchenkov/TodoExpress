@@ -11,12 +11,20 @@ body {
 }
 
 form label {
-    font-size: 110%;
+    font-size: 23px;
     font-style: italic;
 }
 
-form input[name="todoBody"] {
+form input {
+    height: 50px;
+}
+
+form input[name="body"] {
     margin-bottom: 20px;
+}
+
+form input::placeholder {
+    font-size: 18px;
 }
 
 #tasks {

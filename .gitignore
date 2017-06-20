@@ -1,4 +1,4 @@
 .vscode
 .idea
 node_modules
-bower_component
+public/bower_component

@@ -7,11 +7,11 @@
             <div class="form-group row">
                 <label for="todoName" class="col-4 col-form-label">Name Task</label>
                 <div class="col-12">
-                    <input name="todoName" placeholder="Enter Task Name ..." class="form-control" type="text"  id="todoName">
+                    <input name="text" placeholder="Enter Task Name ..." class="form-control" type="text"  id="todoName">
                 </div>
                 <label for="todoBody" class="col-4 col-form-label">Body Task</label>
                 <div class="col-12">
-                    <input class="form-control" name="todoBody" type="text" placeholder="Enter Task Body ..." id="todoBody">
+                    <input class="form-control" name="body" type="text" placeholder="Enter Task Body ..." id="todoBody">
                 </div>
                 <div class="col-12">
                     <input class="btn btn-outline-primary form-control" type="submit" value="Add">
@@ -23,7 +23,13 @@
             <ul class="list-group">
                 <li class="list-group-item active">Last Tasks</li>
                 <% todos.forEach((todo) => { %>
-                    <li class="list-group-item"><%= todo.text%> - <%= todo.body %></li>
+                    <li class="list-group-item">
+                        <span class="col-sm-6"><%= todo.text%> - <%= todo.body %></span>
+                        <div class="text-right col-sm-6">
+                            <a href="#" class="btn-edit btn btn-warning col-sm-5">Edit</a>&nbsp;&nbsp;
+                            <a href="#" data-id="<%= todo._id %>" class="btn-delete btn btn-danger col-sm-5">Delete</a>
+                        </div>
+                    </li>
                 <%})%>
             </ul>
         </div>
